@@ -23,9 +23,10 @@ Route::get('/', function () {
 //     return view('about');
 // });
 
-// Route::get('/about', function(){
-//     return view('contact');
-// });
+Route::get('/contact', function(){
+    $data = "<h2>Here are my contact details</h2>";
+    return view('contact', compact('data'));
+});
 
 Route::view("about", 'about'); //Route::view("[URL]", ["page name"]);
-Route::view("xyz", 'contact');
+// Route::view("xyz", 'contact');
