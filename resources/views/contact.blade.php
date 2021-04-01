@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Contact</h1>
-    <a href="/">Home page</a>
+    <a href="/">Home page</a><br>
+    {!!$data!!}
 </body>
 </html>
