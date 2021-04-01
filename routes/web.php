@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisterController::class, 'index']);
 
-Route::get('/posts', function () {
+Route::get('/', function () {
     return view('posts.index');
 });
