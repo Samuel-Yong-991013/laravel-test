@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/', function () {
     return view('posts.index');
 });
+
+Route::get('users', [UsersController::class, 'viewLoad']);
