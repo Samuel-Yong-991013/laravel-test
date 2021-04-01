@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//passing data with routing
 Route::get('/', function () {
     return view('welcome');
+    // return redirect("about");
 });
+
+// Route::get('/about', function(){
+//     return view('about');
+// });
+
+// Route::get('/about', function(){
+//     return view('contact');
+// });
+
+Route::view("about", 'about'); //Route::view("[URL]", ["page name"]);
+Route::view("xyz", 'contact');
