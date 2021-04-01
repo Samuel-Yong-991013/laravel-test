@@ -7,7 +7,9 @@
         <title>Users</title>
     </head>
     <body>
-        <h1>Users Page</h1>
-        {{$users}}
+        <h1>User page</h1>
+        @foreach($users as $user)
+            <h3>{{$user}}</h3>
+        @endforeach
     </body>
 </html>
