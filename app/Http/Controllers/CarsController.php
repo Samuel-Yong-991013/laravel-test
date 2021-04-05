@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Car;
 
 class CarsController extends Controller
 {
@@ -13,7 +14,12 @@ class CarsController extends Controller
      */
     public function index()
     {
-        return view('cars/index');
+        //SELECT * FROM TABLE cars
+        $cars = Car::all(); //possible to just do this right into the view like: return view (Car::all())
+
+        return view('cars/index', [
+            'cars' => $cars
+        ]);
     }
 
     /**
