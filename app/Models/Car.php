@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     use HasFactory;
+
+    protected $table = 'cars';
+
+    protected $primaryKey = 'id';
+    // protected $primaryKey = false; (for if you don't want a primary key)
+    // protected $primaryKey = 'name' (to set primary key)
+
+    // protected $timestamps = false; (turns off timestamps: updated at, created at, etc.)
+
+    // protected $dateFormat = 'h:m:s'; (modify date format)
 }
