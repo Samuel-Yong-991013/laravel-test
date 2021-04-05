@@ -9,18 +9,20 @@
         </div>
 
         <div class="w-5/6 py-10">
-            <div class="m-auto">
-                <span class="uppercase text-blue-500 font-bold text-xs italic">
-                    Founded: 2020
-                </span>
-                <h2 class="text-gray-700 text-5xl py-6">
-                    Audi
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusamus laudantium, magnam suscipit praesentium cum corrupti placeat voluptates nam molestiae sapiente dolores hic? Explicabo eius sint consequatur incidunt, dolore est!
-                </p>
-                <hr class="mt-4 mb-8">
-            </div>
+            @foreach ($cars as $car)
+                <div class="m-auto">
+                    <span class="uppercase text-blue-500 font-bold text-xs italic">
+                        Founded: {{$car->founded}}
+                    </span>
+                    <h2 class="text-gray-700 text-5xl py-6">
+                        {{$car-> name}}
+                    </h2>
+                    <p>
+                        Description: {{$car -> description}}
+                    </p>
+                    <hr class="mt-4 mb-8">
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection
