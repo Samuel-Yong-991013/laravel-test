@@ -110,6 +110,12 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'founded' => 'required|integer|min:0|max:2021',
+            'description' => 'required',
+        ]);
+
         $car = Car::where('id', $id)->update([
                 'name' => $request->input('name'), 
                 'founded' => $request->input('founded'), 
