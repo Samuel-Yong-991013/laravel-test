@@ -12,6 +12,7 @@ class Car extends Model
     protected $table = 'cars';
 
     protected $primaryKey = 'id';
+    protected $fillable = ['name', 'founded', 'description'];
     // protected $primaryKey = false; (for if you don't want a primary key)
     // protected $primaryKey = 'name' (to set primary key)
 
