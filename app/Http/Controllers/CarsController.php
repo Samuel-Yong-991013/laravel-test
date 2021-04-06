@@ -15,9 +15,21 @@ class CarsController extends Controller
     public function index()
     {
         //SELECT * FROM TABLE cars
-        $cars = Car::all(); //possible to just do this right into the view like: return view (Car::all())
+        // $cars = Car::where('name', '=', 'Audi')
+        //     ->get();;
+         //possible to just do this right into the view like: return view (Car::all())
 
-        return view('cars/index', [
+        // the 'chunk' command is used when there are simply too many records to display, memory will be locked.
+        // the 'chunk command prevents that by displaying a finite amount
+        // $cars = Car::chunk(2, function ($cars){
+        //     foreach($cars as $car) {
+        //         print_r($car);
+        // //     }
+        // });
+
+        $cars = Car::all();
+
+        return view('cars.index', [
             'cars' => $cars
         ]);
     }
@@ -29,7 +41,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -40,7 +52,19 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $car = new Car;
+        // $car->name = $request->input('name');
+        // $car->founded = $request->input('founded');
+        // $car->description = $request->input('description');
+        // $car->save();
+
+        $car = Car::create([
+            'name' => $request->input('name'), 
+            'founded' => $request->input('founded'), 
+            'description' => $request->input('description')
+        ]);
+
+        return redirect('/cars');
     }
 
     /**
@@ -62,7 +86,7 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('cars.create');
     }
 
     /**
