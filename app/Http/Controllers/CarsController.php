@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
-use App\Rules\Uppercase;
 
 class CarsController extends Controller
 {
