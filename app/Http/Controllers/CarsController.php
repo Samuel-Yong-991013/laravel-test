@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Http\Requests\CreateValidationRequest;
 
 class CarsController extends Controller
 {
@@ -50,19 +51,15 @@ class CarsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateValidationRequest $request)
     {
-        // $car = new Car;
-        // $car->name = $request->input('name');
-        // $car->founded = $request->input('founded');
-        // $car->description = $request->input('description');
-        // $car->save();
+        // $request->validate([
+        //     'name' => 'required|unique:cars',
+        //     'founded' => 'required|integer|min:0|max:2021',
+        //     'description' => 'required',
+        // ]);
 
-        $request->validate([
-            'name' => 'required|unique:cars',
-            'founded' => 'required|integer|min:0|max:2021',
-            'description' => 'required',
-        ]);
+        $request->validated();
 
         //if the validation passes, it will proceed
         //else, it will throw a ValidationException
@@ -107,13 +104,15 @@ class CarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateValidationRequest $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'founded' => 'required|integer|min:0|max:2021',
-            'description' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'founded' => 'required|integer|min:0|max:2021',
+        //     'description' => 'required',
+        // ]);
+
+        $request->validated();
 
         $car = Car::where('id', $id)->update([
                 'name' => $request->input('name'), 
