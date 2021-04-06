@@ -17,6 +17,7 @@
                     <input type="text" class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" name="description" placeholder="Description...">
 
                     <button type="submit" class="bg-green-500 block shadow-5xl mb-10 p-2 w-80 uppercase font-bold">Submit</button>
+                    <a type="button" href="/cars" class="bg-gray-500 block shadow-5xl mb-10 p-2 w-80 uppercase font-bold text-center">Cancel</a>
                 </div>
                 @if ($errors->any())
                     <div class="w-4/8 m-auto text-center">
